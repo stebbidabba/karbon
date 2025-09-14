@@ -301,15 +301,23 @@ body {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
 .benefit-card {
   background: linear-gradient(135deg, #1a1d20 0%, #14171a 100%);
   border: 1px solid rgba(46, 204, 113, 0.2);
   border-radius: 16px;
-  padding: 32px;
+  padding: 24px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -339,29 +347,30 @@ body {
 }
 
 .benefit-icon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   background: rgba(46, 204, 113, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 16px auto;
   color: var(--brand-green);
 }
 
 .benefit-card h4 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  margin: 0 0 16px 0;
+  font-size: 16px;
+  margin: 0 0 12px 0;
   color: var(--white);
 }
 
 .benefit-card p {
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.5;
+  line-height: 1.4;
+  font-size: 14px;
 }
 
 /* Process Section */
