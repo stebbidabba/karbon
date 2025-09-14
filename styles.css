@@ -963,8 +963,38 @@ body {
 .btn--primary:focus { outline: 2px solid var(--brand-green); outline-offset: 2px; }
 
 /* Responsive tweaks */
+@media (max-width: 768px) {
+  .side-nav {
+    right: clamp(4px, 1.5vw, 12px);
+  }
+  
+  .side-nav__list {
+    gap: 8px;
+  }
+  
+  .side-nav__link { 
+    min-width: 100px; 
+    padding: 8px 10px; 
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+}
+
 @media (max-width: 480px) {
-  .side-nav__link { min-width: 120px; padding: 10px 12px; }
+  .side-nav {
+    right: 4px;
+  }
+  
+  .side-nav__list {
+    gap: 6px;
+  }
+  
+  .side-nav__link { 
+    min-width: 80px; 
+    padding: 6px 8px; 
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
 }
 
 @media (min-width: 1024px) {
