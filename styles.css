@@ -212,13 +212,17 @@ body {
 
 /* Value Proposition */
 .value-prop {
-  display: grid;
-  gap: 48px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (min-width: 900px) {
-  .value-prop { grid-template-columns: 1fr 400px; }
+.value-prop-text {
+  width: 100%;
+  text-align: center;
 }
 
 .value-prop-text h3 {
@@ -227,6 +231,7 @@ body {
   font-size: clamp(24px, 4vw, 32px);
   margin: 0 0 24px 0;
   color: var(--white);
+  text-align: center;
 }
 
 .value-prop-text p {
@@ -234,12 +239,14 @@ body {
   line-height: 1.6;
   margin: 0 0 32px 0;
   color: rgba(255, 255, 255, 0.9);
+  text-align: center;
 }
 
 .no-hype {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .highlight {
@@ -1155,6 +1162,144 @@ body {
   justify-content: center;
   gap: 16px;
   margin-top: 32px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(46, 204, 113, 0.1);
+  border: 2px solid var(--brand-green);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.hamburger-btn:hover {
+  background: rgba(46, 204, 113, 0.2);
+  transform: scale(1.05);
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: var(--brand-green);
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+/* Hamburger Animation */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 32px;
+  padding: 60px 20px 20px;
+}
+
+.mobile-nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px 40px;
+  border-radius: 12px;
+  background: rgba(46, 204, 113, 0.15);
+  border: 2px solid rgba(46, 204, 113, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 250px;
+  transform: translateY(20px);
+  opacity: 0;
+  display: block;
+  position: relative;
+  z-index: 10001;
+}
+
+.mobile-menu.active .mobile-nav-link {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Stagger animation for mobile nav links */
+.mobile-menu.active .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu.active .mobile-nav-link:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu.active .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu.active .mobile-nav-link:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu.active .mobile-nav-link:nth-child(5) { transition-delay: 0.5s; }
+.mobile-menu.active .mobile-nav-link:nth-child(6) { transition-delay: 0.6s; }
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+  color: var(--black);
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .side-nav__list {
+    display: none;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* FAQ Section */

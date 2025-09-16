@@ -201,4 +201,68 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Hamburger Menu Functionality
+window.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const body = document.body;
+
+  if (hamburgerBtn && mobileMenu) {
+    // Toggle mobile menu
+    hamburgerBtn.addEventListener('click', function() {
+      const isOpen = hamburgerBtn.classList.contains('active');
+      
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close menu when clicking on nav links
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        closeMobileMenu();
+      });
+    });
+
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target === mobileMenu) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && hamburgerBtn.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+
+    function openMobileMenu() {
+      hamburgerBtn.classList.add('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('active');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      body.classList.add('menu-open');
+      
+      // Focus management
+      mobileMenu.querySelector('.mobile-nav-link').focus();
+    }
+
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('active');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      body.classList.remove('menu-open');
+      
+      // Return focus to hamburger button
+      hamburgerBtn.focus();
+    }
+  }
+});
+
 })();

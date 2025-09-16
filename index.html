@@ -16,6 +16,7 @@
       <img src="./assets/images/logo.jpg" alt="Karbon Ísland merki" class="logo" width="200" height="200" />
 
       <nav class="side-nav" aria-label="Aðal leiðsögn">
+        <!-- Desktop Navigation -->
         <ul class="side-nav__list" role="list">
           <li><a class="side-nav__link" href="#thjonusta">Þjónusta</a></li>
           <li><a class="side-nav__link" href="#um-okkur">Um okkur</a></li>
@@ -25,7 +26,17 @@
           <li><a class="side-nav__link" href="#hafdu-samband">Hafðu samband</a></li>
         </ul>
       </nav>
-
+      
+      <!-- Mobile Hamburger Menu -->
+      <button class="hamburger-btn" aria-label="Opna valmynd" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Mobile Menu Overlay -->
+      <!-- moved to end of body -->
+      
       <div class="hero__stacked" aria-label="Kynning">
         <div class="badge">Fjarþjálfun og Næringarráðgjöf</div>
         <div class="hero__title">Karbon Ísland</div>
@@ -567,6 +578,17 @@
       <div class="modal-content">
         <button class="modal-close" aria-label="Loka glugga">&times;</button>
         <img id="modal-image" class="modal-image" src="" alt="" />
+      </div>
+    </div>
+    <!-- Global Mobile Menu Overlay (moved here to be top-level) -->
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-content">
+        <a href="#thjonusta" class="mobile-nav-link" aria-label="Fara á þjónustu">Þjónusta</a>
+        <a href="#um-okkur" class="mobile-nav-link" aria-label="Fara á um okkur">Um okkur</a>
+        <a href="#arangur" class="mobile-nav-link" aria-label="Fara á árangur">Árangur</a>
+        <a href="#faq" class="mobile-nav-link" aria-label="Fara á spurningar">Spurningar</a>
+        <a href="#skraning" class="mobile-nav-link" aria-label="Fara á skráningu">Skráning</a>
+        <a href="#hafdu-samband" class="mobile-nav-link" aria-label="Fara á hafðu samband">Hafðu samband</a>
       </div>
     </div>
   </body>
