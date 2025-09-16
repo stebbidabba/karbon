@@ -299,6 +299,7 @@ body {
 }
 
 .service-list {
+  margin-top: 48px;
   margin-bottom: 48px;
 }
 
@@ -411,11 +412,14 @@ body {
 
 .process-steps {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
-@media (min-width: 900px) {
-  .process-steps { grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 768px) {
+  .process-steps { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+  }
 }
 
 .step {
@@ -574,17 +578,30 @@ body {
   font-size: 15px;
 }
 
-.credentials {
+.credentials ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.credential {
-  display: inline-flex;
-  align-items: center;
+
+.credentials li {
+  position: relative;
+  padding-left: 20px;
   font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.credentials li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
   color: var(--brand-green);
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .team-image-wrapper {
@@ -902,6 +919,23 @@ body {
 .contact-link:hover { filter: brightness(1.05); }
 .contact-link:focus { outline: 2px solid var(--brand-green); outline-offset: 2px; }
 
+.instagram-link {
+  color: var(--brand-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+  color: #6bc46d;
+  text-decoration: underline;
+}
+
+.instagram-link:focus {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 2px;
+}
+
 /* Form card */
 .form-card {
   margin-top: 24px;
@@ -987,6 +1021,141 @@ body {
 }
 .btn--primary:hover { filter: brightness(1.05); }
 .btn--primary:focus { outline: 2px solid var(--brand-green); outline-offset: 2px; }
+
+/* New Signup Section Styles */
+.signup-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 40px 0;
+}
+
+/* Program Selector */
+.program-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1200px) {
+  .program-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .program-selector {
+    grid-template-columns: 1fr;
+  }
+}
+
+.program-option {
+  background: linear-gradient(135deg, #1a1d20 0%, #14171a 100%);
+  border: 2px solid rgba(46, 204, 113, 0.2);
+  border-radius: 16px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand-green), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.program-option:hover {
+  border-color: var(--brand-green);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.program-option:hover::before {
+  opacity: 1;
+}
+
+.program-option h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white);
+  margin: 0 0 12px 0;
+}
+
+.program-option p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Signup Forms */
+.signup-form {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  margin-top: 40px;
+  display: none;
+}
+
+.signup-form.show {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-form .form-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.signup-form .form-card h3 { 
+  margin: 0 0 24px 0; 
+  text-align: center; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
 
 /* FAQ Section */
 .section--faq {

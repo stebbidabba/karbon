@@ -108,4 +108,97 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Program Selection and Form Switching
+window.addEventListener('DOMContentLoaded', function() {
+  const programOptions = document.querySelectorAll('.program-option');
+  const programSelector = document.querySelector('.program-selector');
+  const heildarþjálfunForm = document.getElementById('form-heildarþjálfun');
+  const simpleForm = document.getElementById('form-simple');
+  const simpleFormTitle = document.getElementById('simple-form-title');
+  const backButtons = document.querySelectorAll('.back-to-selection');
+
+  // Handle program option clicks
+  programOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const program = this.getAttribute('data-program');
+      
+      // Hide program selector with fade out
+      programSelector.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      programSelector.style.opacity = '0';
+      programSelector.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        programSelector.style.display = 'none';
+        
+        if (program === 'heildarþjálfun') {
+          // Show comprehensive form
+          heildarþjálfunForm.style.display = 'block';
+          setTimeout(() => {
+            heildarþjálfunForm.classList.add('show');
+          }, 50);
+        } else {
+          // Show simple form with appropriate title
+          let title = '';
+          switch(program) {
+            case 'æfingar-endurgjöf':
+              title = 'Æfingar með endurgjöf - Skráning';
+              break;
+            case 'næringarráðgjöf':
+              title = 'Næringarráðgjöf - Skráning';
+              break;
+            case 'æfingaprógramm':
+              title = 'Æfingaprógramm - Skráning';
+              break;
+          }
+          simpleFormTitle.textContent = title;
+          simpleForm.style.display = 'block';
+          setTimeout(() => {
+            simpleForm.classList.add('show');
+          }, 50);
+        }
+      }, 300);
+    });
+  });
+
+  // Handle back to selection buttons
+  backButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Hide current form
+      const currentForm = this.closest('.signup-form');
+      currentForm.classList.remove('show');
+      
+      setTimeout(() => {
+        currentForm.style.display = 'none';
+        
+        // Show program selector with fade in
+        programSelector.style.display = 'grid';
+        programSelector.style.opacity = '0';
+        programSelector.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+          programSelector.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          programSelector.style.opacity = '1';
+          programSelector.style.transform = 'translateY(0)';
+        }, 50);
+      }, 300);
+    });
+  });
+
+  // Handle "Other" checkbox functionality for comprehensive form
+  const interestOtherHt = document.getElementById('interest-other-ht');
+  const interestOtherWrapHt = document.getElementById('interest-other-wrap-ht');
+  
+  if (interestOtherHt && interestOtherWrapHt) {
+    interestOtherHt.addEventListener('change', function() {
+      if (this.checked) {
+        interestOtherWrapHt.hidden = false;
+      } else {
+        interestOtherWrapHt.hidden = true;
+        document.getElementById('interest-other-text-ht').value = '';
+      }
+    });
+  }
+});
+
 })();
