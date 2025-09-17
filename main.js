@@ -142,13 +142,10 @@ window.addEventListener('DOMContentLoaded', function() {
           let title = '';
           switch(program) {
             case 'æfingar-endurgjöf':
-              title = 'Æfingar með endurgjöf - Skráning';
+              title = 'Fjarþjálfun - Skráning';
               break;
             case 'næringarráðgjöf':
               title = 'Næringarráðgjöf - Skráning';
-              break;
-            case 'æfingaprógramm':
-              title = 'Æfingaprógramm - Skráning';
               break;
           }
           simpleFormTitle.textContent = title;
