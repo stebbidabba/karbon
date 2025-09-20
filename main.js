@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('DOMContentLoaded', function() {
   const programOptions = document.querySelectorAll('.program-option');
   const programSelector = document.querySelector('.program-selector');
-  const heildarþjálfunForm = document.getElementById('form-heildarþjálfun');
+  const karbonPerformanceForm = document.getElementById('form-karbon-performance');
   const simpleForm = document.getElementById('form-simple');
   const simpleFormTitle = document.getElementById('simple-form-title');
   const backButtons = document.querySelectorAll('.back-to-selection');
@@ -131,17 +131,17 @@ window.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         programSelector.style.display = 'none';
         
-        if (program === 'heildarþjálfun') {
+        if (program === 'karbon-performance') {
           // Show comprehensive form
-          heildarþjálfunForm.style.display = 'block';
+          karbonPerformanceForm.style.display = 'block';
           setTimeout(() => {
-            heildarþjálfunForm.classList.add('show');
+            karbonPerformanceForm.classList.add('show');
           }, 50);
         } else {
           // Show simple form with appropriate title
           let title = '';
           switch(program) {
-            case 'æfingar-endurgjöf':
+            case 'fjarþjálfun':
               title = 'Fjarþjálfun - Skráning';
               break;
             case 'næringarráðgjöf':
