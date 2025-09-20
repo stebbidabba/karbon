@@ -773,6 +773,80 @@ body {
 }
 .results-cta p { margin: 0 0 12px 0; font-size: 18px; opacity: 0.9; }
 
+/* Communication Section */
+.communication-section {
+  margin: 48px 0;
+  padding: 0 16px;
+}
+
+.communication-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.communication-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(89, 162, 81, 0.3);
+  transform: translateY(-2px);
+}
+
+.communication-icon {
+  color: var(--brand-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(89, 162, 81, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(89, 162, 81, 0.2);
+}
+
+.communication-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--brand-green);
+}
+
+.communication-content p {
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+}
+
+.communication-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .communication-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 40px;
+  }
+  
+  .communication-icon {
+    flex-shrink: 0;
+    margin-right: 32px;
+  }
+  
+  .communication-content {
+    flex: 1;
+  }
+}
+
 /* Testimonials Section */
 .testimonials-section {
   margin-top: 48px;
