@@ -1119,6 +1119,21 @@ body {
   margin-bottom: 40px;
 }
 
+/* Lausnir section specific styling */
+#lausnir {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+#lausnir .program-selector {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#lausnir .program-option {
+  text-decoration: none;
+  display: block;
+}
+
 @media (max-width: 1200px) {
   .program-selector {
     grid-template-columns: repeat(2, 1fr);
