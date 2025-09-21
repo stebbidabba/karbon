@@ -201,6 +201,10 @@
             <h3>Karbon Performance</h3>
             <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni.</p>
           </a>
+          <a class="program-option" href="#skraning" aria-label="Karbon Premium – skráning">
+            <h3>Karbon Premium</h3>
+            <p>Allt sem er í Karbon Performance auk æfinga með þjálfara, genarannsóknar, blóðprufa og Whoop áskriftar.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -489,6 +493,11 @@
             <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
           </button>
           
+          <button class="program-option" data-program="karbon-premium">
+            <h3>Karbon Premium</h3>
+            <p>Allt sem er í Karbon Performance auk æfinga með þjálfara, genarannsóknar, blóðprufa og Whoop áskriftar</p>
+          </button>
+          
           <button class="program-option" data-program="fjarþjálfun">
             <h3>Fjarþjálfun</h3>
             <p>Einstaklingsmiðuð þjálfun þar sem við komum þér í þitt besta stand með daglegri endurgjöf</p>
@@ -554,7 +563,61 @@
           </form>
         </div>
 
-        <!-- Simple Contact Form (for other 3 programs) -->
+        <!-- Karbon Premium Form -->
+        <div id="form-karbon-premium" class="signup-form" style="display: none;">
+          <form class="form-card" aria-label="Karbon Premium skráningarform" novalidate>
+            <h3>Karbon Premium - Skráning</h3>
+            
+            <div class="form-grid">
+              <div class="form-control">
+                <label for="full-name-premium">Fullt nafn</label>
+                <input id="full-name-premium" name="fullName" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
+              </div>
+              <div class="form-control">
+                <label for="email-premium">Gmail</label>
+                <input id="email-premium" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="notandi@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" />
+              </div>
+            </div>
+
+            <fieldset class="form-fieldset">
+              <legend>Hvað hefurðu áhuga á að bæta?</legend>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Styrk"> <span>Styrk</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Úthald"> <span>Úthald</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Liðleika"> <span>Liðleika</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Mataræði"> <span>Mataræði</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Svefn"> <span>Svefn</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Aðra þætti til að bæta heilsuna"> <span>Aðra þætti til að bæta heilsuna</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="interests" value="Streitustjórnun"> <span>Streitustjórnun</span></label>
+                <label class="checkbox-item"><input id="interest-other-premium" type="checkbox" name="interests" value="Annað"> <span>Annað</span></label>
+              </div>
+              <div id="interest-other-wrap-premium" class="form-control form-control--inline" hidden>
+                <label for="interest-other-text-premium">Annað</label>
+                <input id="interest-other-text-premium" name="interestOther" type="text" placeholder="Lýstu nánar…" />
+              </div>
+            </fieldset>
+
+            <div class="form-control">
+              <label for="dream-outcome-premium">Hvað væri draumaútkoman þín eftir 12 vikur?</label>
+              <textarea id="dream-outcome-premium" name="dreamOutcome" rows="3" placeholder="Segðu okkur frá markmiðunum þínum…"></textarea>
+            </div>
+            <div class="form-control">
+              <label for="current-routine-premium">Hvað ertu að gera núna á æfingum og fyrir almenna heilsu?</label>
+              <textarea id="current-routine-premium" name="currentRoutine" rows="3" placeholder="Hver er núverandi rútína?"></textarea>
+            </div>
+            <div class="form-control">
+              <label for="main-blocker-premium">Hvað er það helsta sem er að stoppa þig við að ná markmiðunum þínum?</label>
+              <textarea id="main-blocker-premium" name="mainBlocker" rows="3" placeholder="Hverjar eru helstu hindranir?"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Senda inn</button>
+              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Simple Contact Form (for other programs) -->
         <div id="form-simple" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Einföld skráning" novalidate>
             <h3 id="simple-form-title">Skráning</h3>

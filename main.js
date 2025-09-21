@@ -114,6 +114,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const programOptions = document.querySelectorAll('.program-option');
   const programSelector = document.querySelector('.program-selector');
   const karbonPerformanceForm = document.getElementById('form-karbon-performance');
+  const karbonPremiumForm = document.getElementById('form-karbon-premium');
   const simpleForm = document.getElementById('form-simple');
   const simpleFormTitle = document.getElementById('simple-form-title');
   const backButtons = document.querySelectorAll('.back-to-selection');
@@ -136,6 +137,12 @@ window.addEventListener('DOMContentLoaded', function() {
           karbonPerformanceForm.style.display = 'block';
           setTimeout(() => {
             karbonPerformanceForm.classList.add('show');
+          }, 50);
+        } else if (program === 'karbon-premium') {
+          // Show comprehensive form
+          karbonPremiumForm.style.display = 'block';
+          setTimeout(() => {
+            karbonPremiumForm.classList.add('show');
           }, 50);
         } else {
           // Show simple form with appropriate title
@@ -182,7 +189,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Handle "Other" checkbox functionality for comprehensive form
+  // Handle "Other" checkbox functionality for comprehensive forms
   const interestOtherHt = document.getElementById('interest-other-ht');
   const interestOtherWrapHt = document.getElementById('interest-other-wrap-ht');
   
@@ -193,6 +200,21 @@ window.addEventListener('DOMContentLoaded', function() {
       } else {
         interestOtherWrapHt.hidden = true;
         document.getElementById('interest-other-text-ht').value = '';
+      }
+    });
+  }
+
+  // Handle "Other" checkbox functionality for Premium form
+  const interestOtherPremium = document.getElementById('interest-other-premium');
+  const interestOtherWrapPremium = document.getElementById('interest-other-wrap-premium');
+  
+  if (interestOtherPremium && interestOtherWrapPremium) {
+    interestOtherPremium.addEventListener('change', function() {
+      if (this.checked) {
+        interestOtherWrapPremium.hidden = false;
+      } else {
+        interestOtherWrapPremium.hidden = true;
+        document.getElementById('interest-other-text-premium').value = '';
       }
     });
   }
