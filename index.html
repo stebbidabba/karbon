@@ -26,7 +26,7 @@
           <li><a class="side-nav__link" href="#hafdu-samband">Hafðu samband</a></li>
         </ul>
       </nav>
-      
+
       <!-- Mobile Hamburger Menu -->
       <!-- moved to end of body -->
       
@@ -189,13 +189,17 @@
         <h2>Lausnir</h2>
         <p class="signup-subtitle">Kynntu þér sértækar lausnir okkar</p>
         <div class="program-selector">
-          <a class="program-option" href="#skraning" aria-label="Fjarþjálfun – skráning">
+          <a class="program-option" href="./fjarþjálfun.html" aria-label="Fjarþjálfun – nánar">
             <h3>Fjarþjálfun</h3>
             <p>Einstaklingsmiðuð þjálfun þar sem við komum þér í þitt besta stand með daglegri endurgjöf frá Eggert.</p>
           </a>
-          <a class="program-option" href="#skraning" aria-label="Næringarráðgjöf – skráning">
+          <a class="program-option" href="./næringarráðgjöf.html" aria-label="Næringarráðgjöf – nánar">
             <h3>Næringarráðgjöf</h3>
             <p>Við hjálpum þér að finna mataræði sem passar þér fullkomlega með vikulegum check-in frá Ingimar.</p>
+          </a>
+          <a class="program-option" href="./æfingarprógram.html" aria-label="Æfingarprógram – nánar">
+            <h3>Æfingarprógram</h3>
+            <p>Daglega æfingar með skriflegum útskýringum og myndböndum af Eggert að sýna framkvæmd á hreyfingum.</p>
           </a>
           <a class="program-option" href="./karbon-performance.html" aria-label="Karbon Performance – nánar">
             <h3>Karbon Performance</h3>
@@ -492,16 +496,6 @@
         
         <!-- Program Selection -->
         <div class="program-selector">
-          <button class="program-option" data-program="karbon-performance">
-            <h3>Karbon Performance</h3>
-            <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
-          </button>
-          
-          <button class="program-option" data-program="karbon-premium">
-            <h3>Karbon Premium</h3>
-            <p>Allt sem er í Karbon Performance auk æfinga með þjálfara, genarannsóknar, blóðprufa og Whoop áskriftar</p>
-          </button>
-          
           <button class="program-option" data-program="fjarþjálfun">
             <h3>Fjarþjálfun</h3>
             <p>Einstaklingsmiðuð þjálfun þar sem við komum þér í þitt besta stand með daglegri endurgjöf</p>
@@ -511,13 +505,23 @@
             <h3>Næringarráðgjöf</h3>
             <p>Við hjálpum þér að finna mataræði sem passar þér fullkomlega með vikulegum check-in</p>
           </button>
+          
+          <button class="program-option" data-program="æfingarprógram">
+            <h3>Æfingarprógram</h3>
+            <p>Daglega æfingar með skriflegum útskýringum og myndböndum af Eggert að sýna framkvæmd á hreyfingum</p>
+          </button>
         </div>
 
         <!-- Inquiry Section -->
         <div class="inquiry-section">
           <h3>Senda fyrirspurn</h3>
-          <p>Fyrir Fyrirtækjanámskeið og Karbon Premium</p>
+          <p>Fyrir Karbon Performance, Fyrirtækjanámskeið og Karbon Premium</p>
           <div class="inquiry-buttons">
+            <button class="program-option" data-program="karbon-performance-inquiry">
+              <h3>Karbon Performance</h3>
+              <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
+            </button>
+            
             <button class="program-option" data-program="fyrirtækjanámskeið">
               <h3>Fyrirtækjanámskeið</h3>
               <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun</p>
@@ -530,113 +534,7 @@
           </div>
         </div>
 
-        <!-- Karbon Performance Form -->
-        <div id="form-karbon-performance" class="signup-form" style="display: none;">
-          <form class="form-card" aria-label="Karbon Performance skráningarform" novalidate>
-            <h3>Karbon Performance - Skráning</h3>
-            
-            <div class="form-grid">
-              <div class="form-control">
-                <label for="full-name-ht">Fullt nafn</label>
-                <input id="full-name-ht" name="fullName" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
-              </div>
-              <div class="form-control">
-                <label for="email-ht">Gmail</label>
-                <input id="email-ht" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="notandi@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" />
-              </div>
-            </div>
 
-            <fieldset class="form-fieldset">
-              <legend>Hvað hefurðu áhuga á að bæta?</legend>
-              <div class="checkbox-group">
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Styrk"> <span>Styrk</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Úthald"> <span>Úthald</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Liðleika"> <span>Liðleika</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Mataræði"> <span>Mataræði</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Svefn"> <span>Svefn</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Aðra þætti til að bæta heilsuna"> <span>Aðra þætti til að bæta heilsuna</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Streitustjórnun"> <span>Streitustjórnun</span></label>
-                <label class="checkbox-item"><input id="interest-other-ht" type="checkbox" name="interests" value="Annað"> <span>Annað</span></label>
-              </div>
-              <div id="interest-other-wrap-ht" class="form-control form-control--inline" hidden>
-                <label for="interest-other-text-ht">Annað</label>
-                <input id="interest-other-text-ht" name="interestOther" type="text" placeholder="Lýstu nánar…" />
-              </div>
-            </fieldset>
-
-            <div class="form-control">
-              <label for="dream-outcome-ht">Hvað væri draumaútkoman þín eftir 12 vikur?</label>
-              <textarea id="dream-outcome-ht" name="dreamOutcome" rows="3" placeholder="Segðu okkur frá markmiðunum þínum…"></textarea>
-            </div>
-            <div class="form-control">
-              <label for="current-routine-ht">Hvað ertu að gera núna á æfingum og fyrir almenna heilsu?</label>
-              <textarea id="current-routine-ht" name="currentRoutine" rows="3" placeholder="Hver er núverandi rútína?"></textarea>
-            </div>
-            <div class="form-control">
-              <label for="main-blocker-ht">Hvað er það helsta sem er að stoppa þig við að ná markmiðunum þínum?</label>
-              <textarea id="main-blocker-ht" name="mainBlocker" rows="3" placeholder="Hverjar eru helstu hindranir?"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn--primary">Senda inn</button>
-              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Karbon Premium Form -->
-        <div id="form-karbon-premium" class="signup-form" style="display: none;">
-          <form class="form-card" aria-label="Karbon Premium skráningarform" novalidate>
-            <h3>Karbon Premium - Skráning</h3>
-            
-            <div class="form-grid">
-              <div class="form-control">
-                <label for="full-name-premium">Fullt nafn</label>
-                <input id="full-name-premium" name="fullName" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
-              </div>
-              <div class="form-control">
-                <label for="email-premium">Gmail</label>
-                <input id="email-premium" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="notandi@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" />
-              </div>
-            </div>
-
-            <fieldset class="form-fieldset">
-              <legend>Hvað hefurðu áhuga á að bæta?</legend>
-              <div class="checkbox-group">
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Styrk"> <span>Styrk</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Úthald"> <span>Úthald</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Liðleika"> <span>Liðleika</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Mataræði"> <span>Mataræði</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Svefn"> <span>Svefn</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Aðra þætti til að bæta heilsuna"> <span>Aðra þætti til að bæta heilsuna</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="interests" value="Streitustjórnun"> <span>Streitustjórnun</span></label>
-                <label class="checkbox-item"><input id="interest-other-premium" type="checkbox" name="interests" value="Annað"> <span>Annað</span></label>
-              </div>
-              <div id="interest-other-wrap-premium" class="form-control form-control--inline" hidden>
-                <label for="interest-other-text-premium">Annað</label>
-                <input id="interest-other-text-premium" name="interestOther" type="text" placeholder="Lýstu nánar…" />
-              </div>
-            </fieldset>
-
-            <div class="form-control">
-              <label for="dream-outcome-premium">Hvað væri draumaútkoman þín eftir 12 vikur?</label>
-              <textarea id="dream-outcome-premium" name="dreamOutcome" rows="3" placeholder="Segðu okkur frá markmiðunum þínum…"></textarea>
-            </div>
-            <div class="form-control">
-              <label for="current-routine-premium">Hvað ertu að gera núna á æfingum og fyrir almenna heilsu?</label>
-              <textarea id="current-routine-premium" name="currentRoutine" rows="3" placeholder="Hver er núverandi rútína?"></textarea>
-            </div>
-            <div class="form-control">
-              <label for="main-blocker-premium">Hvað er það helsta sem er að stoppa þig við að ná markmiðunum þínum?</label>
-              <textarea id="main-blocker-premium" name="mainBlocker" rows="3" placeholder="Hverjar eru helstu hindranir?"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn--primary">Senda inn</button>
-              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
-            </div>
-          </form>
-        </div>
 
         <!-- Simple Contact Form (for Fjarþjálfun and Næringarráðgjöf) -->
         <div id="form-simple" class="signup-form" style="display: none;">
@@ -670,7 +568,7 @@
           </form>
         </div>
 
-        <!-- Inquiry Form (for Fyrirtækjanámskeið and Karbon Premium) -->
+        <!-- Inquiry Form (for Karbon Performance, Fyrirtækjanámskeið and Karbon Premium) -->
         <div id="form-inquiry" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Fyrirspurn" novalidate>
             <h3 id="inquiry-form-title">Senda fyrirspurn</h3>
@@ -693,6 +591,11 @@
             <fieldset class="form-fieldset">
               <legend>Hvað hefurðu áhuga á?</legend>
               <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="interest" value="Karbon Performance" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Karbon Performance</span>
+                </label>
                 <label class="radio-item">
                   <input type="radio" name="interest" value="Fyrirtækjanámskeið" required>
                   <span class="radio-custom"></span>

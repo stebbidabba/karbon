@@ -1190,6 +1190,8 @@ body {
 }
 
 #skraning .program-selector {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1301,9 +1303,9 @@ body {
 
 .inquiry-buttons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: 900px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1322,10 +1324,18 @@ body {
   line-height: 1.5;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+  .inquiry-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
   .inquiry-buttons {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
     max-width: 600px;
   }
 }
@@ -1345,6 +1355,11 @@ body {
   .program-selector {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+  
+  #skraning .program-selector {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
   }
 }
 
