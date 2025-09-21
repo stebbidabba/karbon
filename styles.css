@@ -1244,7 +1244,7 @@ body {
 }
 
 #lausnir .program-selector {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-bottom: 0;
 }
@@ -1266,13 +1266,6 @@ body {
   line-height: 1.5;
 }
 
-@media (max-width: 1400px) {
-  #lausnir .program-selector {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-}
-
 @media (max-width: 1000px) {
   #lausnir .program-selector {
     grid-template-columns: repeat(2, 1fr);
@@ -1282,7 +1275,7 @@ body {
 
 @media (max-width: 600px) {
   #lausnir .program-selector {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   
