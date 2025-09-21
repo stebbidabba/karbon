@@ -50,14 +50,26 @@ body {
 }
 
 /* Logo top-left */
-.logo {
+.logo-link {
   position: absolute;
   top: clamp(12px, 3vw, 24px);
   left: clamp(12px, 3vw, 24px);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+.logo {
   width: min(30vw, 220px);
   height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  display: block;
 }
 
 /* Side nav right */
