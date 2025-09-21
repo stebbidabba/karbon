@@ -21,6 +21,7 @@
         <!-- Desktop Navigation -->
         <ul class="side-nav__list" role="list">
           <li><a class="side-nav__link" href="#thjonusta">Þjónusta</a></li>
+          <li><a class="side-nav__link" href="#lausnir">Þjónusta</a></li>
           <li><a class="side-nav__link" href="#um-okkur">Um okkur</a></li>
           <li><a class="side-nav__link" href="#arangur">Árangur</a></li>
           <li><a class="side-nav__link" href="#faq">Spurningar</a></li>
@@ -186,10 +187,10 @@
     </section>
 
     <!-- Offers Section linking to dedicated pages -->
-    <section id="lausnir" class="section" aria-label="Lausnir">
+    <section id="lausnir" class="section" aria-label="Þjónusta">
       <div class="container">
-        <h2>Lausnir</h2>
-        <p class="signup-subtitle">Kynntu þér sértækar lausnir okkar</p>
+        <h2>Þjónusta</h2>
+        <p class="signup-subtitle">Kynntu þér þjónustuna okkar</p>
         <div class="program-selector">
           <a class="program-option" href="./fjarþjálfun.html" aria-label="Fjarþjálfun – nánar">
             <h3>Fjarþjálfun</h3>
@@ -514,30 +515,6 @@
           </button>
         </div>
 
-        <!-- Inquiry Section -->
-        <div class="inquiry-section">
-          <h3>Senda fyrirspurn</h3>
-          <p>Fyrir Karbon Performance, Fyrirtækjanámskeið og Karbon Premium</p>
-          <div class="inquiry-buttons">
-            <button class="program-option" data-program="karbon-performance-inquiry">
-              <h3>Karbon Performance</h3>
-              <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
-            </button>
-            
-            <button class="program-option" data-program="fyrirtækjanámskeið">
-              <h3>Fyrirtækjanámskeið</h3>
-              <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun</p>
-            </button>
-            
-            <button class="program-option" data-program="karbon-premium-inquiry">
-              <h3>Karbon Premium</h3>
-              <p>Allt sem þú þarft fyrir heilsuna ef þú vilt ekki láta neitt fara fram hjá þér</p>
-            </button>
-          </div>
-        </div>
-
-
-
         <!-- Simple Contact Form (for Fjarþjálfun and Næringarráðgjöf) -->
         <div id="form-simple" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Einföld skráning" novalidate>
@@ -546,6 +523,11 @@
             <div class="form-control">
               <label for="name-simple">Nafn</label>
               <input id="name-simple" name="name" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
+            </div>
+            
+            <div class="form-control">
+              <label for="kt-simple">Kennitala</label>
+              <input id="kt-simple" name="kt" type="text" inputmode="numeric" pattern="[0-9]{10}" required placeholder="1234567890" />
             </div>
             
             <div class="form-control">
@@ -570,6 +552,28 @@
           </form>
         </div>
 
+        <!-- Inquiry Section -->
+        <div class="inquiry-section">
+          <h3>Senda fyrirspurn</h3>
+          <p>Fyrir Karbon Performance, Fyrirtækjanámskeið og Karbon Premium</p>
+          <div class="inquiry-buttons">
+            <button class="inquiry-option" data-inquiry="karbon-performance-inquiry">
+              <h3>Karbon Performance</h3>
+              <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
+            </button>
+            
+            <button class="inquiry-option" data-inquiry="fyrirtækjanámskeið">
+              <h3>Fyrirtækjanámskeið</h3>
+              <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun</p>
+            </button>
+            
+            <button class="inquiry-option" data-inquiry="karbon-premium-inquiry">
+              <h3>Karbon Premium</h3>
+              <p>Allt sem þú þarft fyrir heilsuna ef þú vilt ekki láta neitt fara fram hjá þér</p>
+            </button>
+          </div>
+        </div>
+
         <!-- Inquiry Form (for Karbon Performance, Fyrirtækjanámskeið and Karbon Premium) -->
         <div id="form-inquiry" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Fyrirspurn" novalidate>
@@ -578,6 +582,11 @@
             <div class="form-control">
               <label for="name-inquiry">Nafn</label>
               <input id="name-inquiry" name="name" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
+            </div>
+            
+            <div class="form-control">
+              <label for="kt-inquiry">Kennitala</label>
+              <input id="kt-inquiry" name="kt" type="text" inputmode="numeric" pattern="[0-9]{10}" required placeholder="1234567890" />
             </div>
             
             <div class="form-control">
@@ -665,6 +674,7 @@
     <div class="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-content">
         <a href="#thjonusta" class="mobile-nav-link" aria-label="Fara á þjónustu">Þjónusta</a>
+        <a href="#lausnir" class="mobile-nav-link" aria-label="Fara á þjónustu">Þjónusta</a>
         <a href="#um-okkur" class="mobile-nav-link" aria-label="Fara á um okkur">Um okkur</a>
         <a href="#arangur" class="mobile-nav-link" aria-label="Fara á árangur">Árangur</a>
         <a href="#faq" class="mobile-nav-link" aria-label="Fara á spurningar">Spurningar</a>

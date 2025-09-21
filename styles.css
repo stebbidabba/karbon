@@ -42,7 +42,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('./assets/images/heroimage.webp');
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('./assets/images/heroimage.avif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1321,17 +1321,20 @@ body {
   margin: 0 auto;
 }
 
-.inquiry-buttons .program-option {
+.inquiry-buttons .program-option,
+.inquiry-buttons .inquiry-option {
   padding: 40px 28px;
 }
 
-.inquiry-buttons .program-option h3 {
+.inquiry-buttons .program-option h3,
+.inquiry-buttons .inquiry-option h3 {
   font-size: clamp(20px, 2.5vw, 24px);
   margin-bottom: 16px;
   line-height: 1.3;
 }
 
-.inquiry-buttons .program-option p {
+.inquiry-buttons .program-option p,
+.inquiry-buttons .inquiry-option p {
   font-size: clamp(15px, 2vw, 17px);
   line-height: 1.5;
 }
@@ -1386,7 +1389,8 @@ body {
   }
 }
 
-.program-option {
+.program-option,
+.inquiry-option {
   background: linear-gradient(135deg, #1a1d20 0%, #14171a 100%);
   border: 2px solid rgba(46, 204, 113, 0.2);
   border-radius: 16px;
@@ -1398,7 +1402,8 @@ body {
   overflow: hidden;
 }
 
-.program-option::before {
+.program-option::before,
+.inquiry-option::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1410,17 +1415,20 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.program-option:hover {
+.program-option:hover,
+.inquiry-option:hover {
   border-color: var(--brand-green);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
-.program-option:hover::before {
+.program-option:hover::before,
+.inquiry-option:hover::before {
   opacity: 1;
 }
 
-.program-option h3 {
+.program-option h3,
+.inquiry-option h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -1428,7 +1436,8 @@ body {
   margin: 0 0 12px 0;
 }
 
-.program-option p {
+.program-option p,
+.inquiry-option p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;

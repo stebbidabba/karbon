@@ -112,7 +112,9 @@ window.addEventListener('DOMContentLoaded', function() {
 // Program Selection and Form Switching
 window.addEventListener('DOMContentLoaded', function() {
   const programOptions = document.querySelectorAll('#skraning .program-option');
+  const inquiryOptions = document.querySelectorAll('.inquiry-option');
   const programSelector = document.querySelector('#skraning .program-selector');
+  const inquiryButtons = document.querySelector('.inquiry-buttons');
   const karbonPerformanceForm = document.getElementById('form-karbon-performance');
   const karbonPremiumForm = document.getElementById('form-karbon-premium');
   const simpleForm = document.getElementById('form-simple');
@@ -173,6 +175,28 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Handle inquiry option clicks
+  inquiryOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const inquiry = this.getAttribute('data-inquiry');
+      
+      // Hide inquiry buttons with fade out
+      inquiryButtons.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      inquiryButtons.style.opacity = '0';
+      inquiryButtons.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        inquiryButtons.style.display = 'none';
+        
+        // Show inquiry form
+        inquiryForm.style.display = 'block';
+        setTimeout(() => {
+          inquiryForm.classList.add('show');
+        }, 50);
+      }, 300);
+    });
+  });
+
   // Handle back to selection buttons
   backButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -183,16 +207,30 @@ window.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         currentForm.style.display = 'none';
         
-        // Show program selector with fade in
-        programSelector.style.display = 'grid';
-        programSelector.style.opacity = '0';
-        programSelector.style.transform = 'translateY(10px)';
-        
-        setTimeout(() => {
-          programSelector.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          programSelector.style.opacity = '1';
-          programSelector.style.transform = 'translateY(0)';
-        }, 50);
+        // Determine which selector to show based on the form
+        if (currentForm === inquiryForm) {
+          // Show inquiry buttons with fade in
+          inquiryButtons.style.display = 'grid';
+          inquiryButtons.style.opacity = '0';
+          inquiryButtons.style.transform = 'translateY(10px)';
+          
+          setTimeout(() => {
+            inquiryButtons.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            inquiryButtons.style.opacity = '1';
+            inquiryButtons.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          // Show program selector with fade in
+          programSelector.style.display = 'grid';
+          programSelector.style.opacity = '0';
+          programSelector.style.transform = 'translateY(10px)';
+          
+          setTimeout(() => {
+            programSelector.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            programSelector.style.opacity = '1';
+            programSelector.style.transform = 'translateY(0)';
+          }, 50);
+        }
       }, 300);
     });
   });
