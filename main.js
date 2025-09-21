@@ -111,8 +111,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // Program Selection and Form Switching
 window.addEventListener('DOMContentLoaded', function() {
-  const programOptions = document.querySelectorAll('.program-option');
-  const programSelector = document.querySelector('.program-selector');
+  const programOptions = document.querySelectorAll('#skraning .program-option');
+  const programSelector = document.querySelector('#skraning .program-selector');
   const karbonPerformanceForm = document.getElementById('form-karbon-performance');
   const karbonPremiumForm = document.getElementById('form-karbon-premium');
   const simpleForm = document.getElementById('form-simple');
