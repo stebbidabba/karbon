@@ -116,7 +116,9 @@ window.addEventListener('DOMContentLoaded', function() {
   const karbonPerformanceForm = document.getElementById('form-karbon-performance');
   const karbonPremiumForm = document.getElementById('form-karbon-premium');
   const simpleForm = document.getElementById('form-simple');
+  const inquiryForm = document.getElementById('form-inquiry');
   const simpleFormTitle = document.getElementById('simple-form-title');
+  const inquiryFormTitle = document.getElementById('inquiry-form-title');
   const backButtons = document.querySelectorAll('.back-to-selection');
 
   // Handle program option clicks
@@ -143,6 +145,12 @@ window.addEventListener('DOMContentLoaded', function() {
           karbonPremiumForm.style.display = 'block';
           setTimeout(() => {
             karbonPremiumForm.classList.add('show');
+          }, 50);
+        } else if (program === 'fyrirtækjanámskeið' || program === 'karbon-premium-inquiry') {
+          // Show inquiry form
+          inquiryForm.style.display = 'block';
+          setTimeout(() => {
+            inquiryForm.classList.add('show');
           }, 50);
         } else {
           // Show simple form with appropriate title

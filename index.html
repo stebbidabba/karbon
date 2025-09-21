@@ -513,6 +513,23 @@
           </button>
         </div>
 
+        <!-- Inquiry Section -->
+        <div class="inquiry-section">
+          <h3>Senda fyrirspurn</h3>
+          <p>Fyrir Fyrirtækjanámskeið og Karbon Premium</p>
+          <div class="inquiry-buttons">
+            <button class="program-option" data-program="fyrirtækjanámskeið">
+              <h3>Fyrirtækjanámskeið</h3>
+              <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun</p>
+            </button>
+            
+            <button class="program-option" data-program="karbon-premium-inquiry">
+              <h3>Karbon Premium</h3>
+              <p>Allt sem þú þarft fyrir heilsuna ef þú vilt ekki láta neitt fara fram hjá þér</p>
+            </button>
+          </div>
+        </div>
+
         <!-- Karbon Performance Form -->
         <div id="form-karbon-performance" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Karbon Performance skráningarform" novalidate>
@@ -621,7 +638,7 @@
           </form>
         </div>
 
-        <!-- Simple Contact Form (for other programs) -->
+        <!-- Simple Contact Form (for Fjarþjálfun and Næringarráðgjöf) -->
         <div id="form-simple" class="signup-form" style="display: none;">
           <form class="form-card" aria-label="Einföld skráning" novalidate>
             <h3 id="simple-form-title">Skráning</h3>
@@ -648,6 +665,59 @@
 
             <div class="form-actions">
               <button type="submit" class="btn btn--primary">Senda</button>
+              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Inquiry Form (for Fyrirtækjanámskeið and Karbon Premium) -->
+        <div id="form-inquiry" class="signup-form" style="display: none;">
+          <form class="form-card" aria-label="Fyrirspurn" novalidate>
+            <h3 id="inquiry-form-title">Senda fyrirspurn</h3>
+            
+            <div class="form-control">
+              <label for="name-inquiry">Nafn</label>
+              <input id="name-inquiry" name="name" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
+            </div>
+            
+            <div class="form-control">
+              <label for="email-inquiry">Netfang</label>
+              <input id="email-inquiry" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="jon@example.com" />
+            </div>
+            
+            <div class="form-control">
+              <label for="phone-inquiry">Símanúmer</label>
+              <input id="phone-inquiry" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="581-2345" />
+            </div>
+
+            <fieldset class="form-fieldset">
+              <legend>Hvað hefurðu áhuga á?</legend>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="interest" value="Fyrirtækjanámskeið" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Fyrirtækjanámskeið</span>
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="interest" value="Karbon Premium" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Karbon Premium</span>
+                </label>
+              </div>
+            </fieldset>
+            
+            <div class="form-control">
+              <label for="company-inquiry">Fyrirtæki (ef við á)</label>
+              <input id="company-inquiry" name="company" type="text" placeholder="Nafn fyrirtækis" />
+            </div>
+            
+            <div class="form-control">
+              <label for="message-inquiry">Skilaboð</label>
+              <textarea id="message-inquiry" name="message" rows="4" placeholder="Segðu okkur frá þínum þörfum og markmiðum..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Senda fyrirspurn</button>
               <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
             </div>
           </form>
