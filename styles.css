@@ -74,11 +74,11 @@ body {
 
 /* Side nav right */
 .side-nav {
-  position: fixed;
+  position: absolute;
   right: clamp(8px, 2vw, 24px);
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 1000;
 }
 .side-nav__list {
   list-style: none;
@@ -86,7 +86,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1.2vw, 12px);
+  gap: clamp(8px, 1.6vw, 16px);
 }
 .side-nav__link {
   display: inline-flex;
