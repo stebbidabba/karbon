@@ -74,7 +74,8 @@
 // FAQ Accordion functionality + Zapier webhook integration
 window.addEventListener('DOMContentLoaded', function() {
   // ===== Zapier webhook integration for forms =====
-  const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24820964/u968d0g/';
+  const ZAPIER_WEBHOOK_URL_SKRANING = 'https://hooks.zapier.com/hooks/catch/24820964/u968d0g/';
+  const ZAPIER_WEBHOOK_URL_FYRIRSPURN = 'https://hooks.zapier.com/hooks/catch/24820964/u9hjsok/';
 
   function serializeForm(form) {
     const data = {};
@@ -90,10 +91,10 @@ window.addEventListener('DOMContentLoaded', function() {
     return data;
   }
 
-  async function postToZapier(payload) {
+  async function postToZapier(payload, webhookUrl) {
     // Use no-cors to bypass browser CORS restrictions. We cannot read the response,
     // but Zapier will still receive the payload.
-    await fetch(ZAPIER_WEBHOOK_URL, {
+    await fetch(webhookUrl, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
@@ -102,7 +103,7 @@ window.addEventListener('DOMContentLoaded', function() {
     return {};
   }
 
-  function handleSubmit(form, meta) {
+  function handleSubmit(form, meta, webhookUrl) {
     if (!form) return;
     const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton ? submitButton.textContent : '';
@@ -124,7 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
       };
 
       try {
-        await postToZapier(payload);
+        await postToZapier(payload, webhookUrl);
         form.innerHTML = '<div class="form-success">Takk! Við höfum móttekið innsendinguna þína. Við höfum samband fljótlega.</div>';
       } catch (err) {
         alert('Ekki tókst að senda. Reyndu aftur á eftir.');
@@ -136,15 +137,15 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Skráning form (dropdown + 3 fields)
+  // Skráning form (dropdown + 6 fields)
   const simpleFormWrap = document.getElementById('form-simple');
   const simpleFormEl = simpleFormWrap ? simpleFormWrap.querySelector('form.form-card') : null;
-  handleSubmit(simpleFormEl, { id: 'skraning', name: 'Skráning' });
+  handleSubmit(simpleFormEl, { id: 'skraning', name: 'Skráning' }, ZAPIER_WEBHOOK_URL_SKRANING);
 
-  // Senda fyrirspurn form (3 fields)
+  // Senda fyrirspurn form (dropdown + 3 fields)
   const inquiryFormWrap = document.getElementById('form-inquiry');
   const inquiryFormEl = inquiryFormWrap ? inquiryFormWrap.querySelector('form.form-card') : null;
-  handleSubmit(inquiryFormEl, { id: 'fyrirspurn', name: 'Senda fyrirspurn' });
+  handleSubmit(inquiryFormEl, { id: 'fyrirspurn', name: 'Senda fyrirspurn' }, ZAPIER_WEBHOOK_URL_FYRIRSPURN);
   // ===== End Zapier webhook integration =====
 
   // ===== FAQ Accordion =====
