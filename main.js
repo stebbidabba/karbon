@@ -244,22 +244,18 @@ window.addEventListener('DOMContentLoaded', function() {
   // Handle inquiry option clicks
   inquiryOptions.forEach(option => {
     option.addEventListener('click', function() {
-      const inquiry = this.getAttribute('data-inquiry');
-      
-      // Hide inquiry buttons with fade out
-      inquiryButtons.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-      inquiryButtons.style.opacity = '0';
-      inquiryButtons.style.transform = 'translateY(-10px)';
-      
-      setTimeout(() => {
-        inquiryButtons.style.display = 'none';
-        
-        // Show inquiry form
-        inquiryForm.style.display = 'block';
-        setTimeout(() => {
-          inquiryForm.classList.add('show');
-        }, 50);
-      }, 300);
+      const program = this.getAttribute('data-program');
+      const select = document.getElementById('program-select');
+      if (select && program) {
+        select.value = program;
+        select.dispatchEvent(new Event('change'));
+        // Smooth scroll to the form top
+        const formWrap = document.getElementById('form-simple');
+        if (formWrap) {
+          const top = formWrap.getBoundingClientRect().top + window.pageYOffset - 12;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
     });
   });
 
