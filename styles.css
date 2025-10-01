@@ -57,6 +57,7 @@ body {
   display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
+  z-index: 1001;
 }
 
 .logo-link:hover {
@@ -120,7 +121,7 @@ body {
 .hero__stacked {
   position: absolute;
   left: clamp(12px, 3vw, 24px);
-  bottom: clamp(16px, 5vw, 48px);
+  bottom: clamp(8px, 4vw, 32px);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -145,10 +146,20 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: clamp(36px, 9vw, 140px);
+  font-size: clamp(32px, 8vw, 110px);
   line-height: 0.95;
   color: var(--white);
   text-shadow: 0 4px 24px rgba(0,0,0,0.45);
+}
+
+/* Company page specific tweaks */
+.hero--company .hero__stacked { 
+  left: clamp(12px, 3vw, 24px);
+  bottom: clamp(8px, 4vw, 32px);
+  max-width: min(90vw, 720px);
+}
+.hero--company .hero__title { 
+  font-size: clamp(28px, 7.2vw, 96px);
 }
 .pill {
   display: inline-block;
