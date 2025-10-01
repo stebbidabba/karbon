@@ -134,15 +134,10 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Simple form (Fjarþjálfun / Næringarráðgjöf)
+  // Unified form submit
   const simpleFormWrap = document.getElementById('form-simple');
   const simpleFormEl = simpleFormWrap ? simpleFormWrap.querySelector('form.form-card') : null;
-  handleSubmit(simpleFormEl, { id: 'simple-signup', name: 'Einföld skráning' });
-
-  // Inquiry form (Performance / Fyrirtækjanámskeið / Premium)
-  const inquiryFormWrap = document.getElementById('form-inquiry');
-  const inquiryFormEl = inquiryFormWrap ? inquiryFormWrap.querySelector('form.form-card') : null;
-  handleSubmit(inquiryFormEl, { id: 'inquiry', name: 'Fyrirspurn' });
+  handleSubmit(simpleFormEl, { id: 'unified-signup', name: 'Skráning' });
   // ===== End Zapier webhook integration =====
 
   // ===== FAQ Accordion =====

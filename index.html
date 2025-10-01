@@ -456,28 +456,21 @@
         <h2>Skráning</h2>
         <p class="signup-subtitle">Veldu prógram sem hentar þér</p>
         
-        <!-- Program Selection -->
-        <div class="program-selector">
-          <button class="program-option" data-program="fjarþjálfun">
-            <h3>Fjarþjálfun</h3>
-            <p>Einstaklingsmiðuð þjálfun þar sem við komum þér í þitt besta stand með daglegri endurgjöf</p>
-          </button>
-          
-          <button class="program-option" data-program="næringarráðgjöf">
-            <h3>Næringarráðgjöf</h3>
-            <p>Við hjálpum þér að finna mataræði sem passar þér fullkomlega með vikulegum check-in</p>
-          </button>
-          
-          <button class="program-option" data-program="æfingarprógram">
-            <h3>Æfingarprógram</h3>
-            <p>Daglega æfingar með skriflegum útskýringum og myndböndum af Eggert að sýna framkvæmd á hreyfingum</p>
-          </button>
-        </div>
-
-        <!-- Simple Contact Form (for Fjarþjálfun and Næringarráðgjöf) -->
-        <div id="form-simple" class="signup-form" style="display: none;">
+        <!-- Unified Signup Form: choose þjálfun first, then fill details -->
+        <div id="form-simple" class="signup-form">
           <form class="form-card" aria-label="Einföld skráning" novalidate>
             <h3 id="simple-form-title">Skráning</h3>
+            <div class="form-control">
+              <label for="program-select">Þjálfun</label>
+              <select id="program-select" name="program" required>
+                <option value="">Veldu þjálfun</option>
+                <option value="Fjarþjálfun">Fjarþjálfun</option>
+                <option value="Næringarráðgjöf">Næringarráðgjöf</option>
+                <option value="Karbon Performance">Karbon Performance</option>
+                <option value="Karbon Premium">Karbon Premium</option>
+                <option value="Fyrirtækjanámskeið">Fyrirtækjanámskeið</option>
+              </select>
+            </div>
             
             <div class="form-control">
               <label for="name-simple">Nafn</label>
@@ -506,95 +499,10 @@
 
             <div class="form-actions">
               <button type="submit" class="btn btn--primary">Senda</button>
-              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
             </div>
           </form>
         </div>
-
-        <!-- Inquiry Section -->
-        <div class="inquiry-section">
-          <h3>Senda fyrirspurn</h3>
-          <p>Fyrir Karbon Performance, Fyrirtækjanámskeið og Karbon Premium</p>
-          <div class="inquiry-buttons">
-            <button class="inquiry-option" data-inquiry="karbon-performance-inquiry">
-              <h3>Karbon Performance</h3>
-              <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni</p>
-            </button>
-            
-            <button class="inquiry-option" data-inquiry="fyrirtækjanámskeið">
-              <h3>Fyrirtækjanámskeið</h3>
-              <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun</p>
-            </button>
-            
-            <button class="inquiry-option" data-inquiry="karbon-premium-inquiry">
-              <h3>Karbon Premium</h3>
-              <p>Allt sem þú þarft fyrir heilsuna ef þú vilt ekki láta neitt fara fram hjá þér</p>
-            </button>
-          </div>
-        </div>
-
-        <!-- Inquiry Form (for Karbon Performance, Fyrirtækjanámskeið and Karbon Premium) -->
-        <div id="form-inquiry" class="signup-form" style="display: none;">
-          <form class="form-card" aria-label="Fyrirspurn" novalidate>
-            <h3 id="inquiry-form-title">Senda fyrirspurn</h3>
-            
-            <div class="form-control">
-              <label for="name-inquiry">Nafn</label>
-              <input id="name-inquiry" name="name" type="text" inputmode="text" autocomplete="name" required placeholder="Jón Jónsson" />
-            </div>
-            
-            <div class="form-control">
-              <label for="kt-inquiry">Kennitala</label>
-              <input id="kt-inquiry" name="kt" type="text" inputmode="numeric" pattern="[0-9]{10}" required placeholder="1234567890" />
-            </div>
-            
-            <div class="form-control">
-              <label for="email-inquiry">Netfang</label>
-              <input id="email-inquiry" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="jon@example.com" />
-            </div>
-            
-            <div class="form-control">
-              <label for="phone-inquiry">Símanúmer</label>
-              <input id="phone-inquiry" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="581-2345" />
-            </div>
-
-            <fieldset class="form-fieldset">
-              <legend>Hvað hefurðu áhuga á?</legend>
-              <div class="radio-group">
-                <label class="radio-item">
-                  <input type="radio" name="interest" value="Karbon Performance" required>
-                  <span class="radio-custom"></span>
-                  <span class="radio-label">Karbon Performance</span>
-                </label>
-                <label class="radio-item">
-                  <input type="radio" name="interest" value="Fyrirtækjanámskeið" required>
-                  <span class="radio-custom"></span>
-                  <span class="radio-label">Fyrirtækjanámskeið</span>
-                </label>
-                <label class="radio-item">
-                  <input type="radio" name="interest" value="Karbon Premium" required>
-                  <span class="radio-custom"></span>
-                  <span class="radio-label">Karbon Premium</span>
-                </label>
-              </div>
-            </fieldset>
-            
-            <div class="form-control">
-              <label for="company-inquiry">Fyrirtæki (ef við á)</label>
-              <input id="company-inquiry" name="company" type="text" placeholder="Nafn fyrirtækis" />
-            </div>
-            
-            <div class="form-control">
-              <label for="message-inquiry">Skilaboð</label>
-              <textarea id="message-inquiry" name="message" rows="4" placeholder="Segðu okkur frá þínum þörfum og markmiðum..."></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn--primary">Senda fyrirspurn</button>
-              <button type="button" class="btn btn--secondary back-to-selection">Til baka</button>
-            </div>
-          </form>
-        </div>
+        
       </div>
     </section>
 
