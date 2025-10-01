@@ -136,10 +136,15 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Unified form submit
+  // Skráning form (dropdown + 3 fields)
   const simpleFormWrap = document.getElementById('form-simple');
   const simpleFormEl = simpleFormWrap ? simpleFormWrap.querySelector('form.form-card') : null;
-  handleSubmit(simpleFormEl, { id: 'unified-signup', name: 'Skráning' });
+  handleSubmit(simpleFormEl, { id: 'skraning', name: 'Skráning' });
+
+  // Senda fyrirspurn form (3 fields)
+  const inquiryFormWrap = document.getElementById('form-inquiry');
+  const inquiryFormEl = inquiryFormWrap ? inquiryFormWrap.querySelector('form.form-card') : null;
+  handleSubmit(inquiryFormEl, { id: 'fyrirspurn', name: 'Senda fyrirspurn' });
   // ===== End Zapier webhook integration =====
 
   // ===== FAQ Accordion =====
@@ -177,8 +182,9 @@ window.addEventListener('DOMContentLoaded', function() {
   // ===== End FAQ Accordion =====
 });
 
-// Program Selection and Form Switching
+// Legacy form switching (kept for compatibility but forms are now always visible)
 window.addEventListener('DOMContentLoaded', function() {
+  // Forms are now always visible, so this section is mostly unused
   const programOptions = document.querySelectorAll('#skraning .program-option');
   const inquiryOptions = document.querySelectorAll('.inquiry-option');
   const programSelector = document.querySelector('#skraning .program-selector');
@@ -243,23 +249,6 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Handle inquiry option clicks
-  inquiryOptions.forEach(option => {
-    option.addEventListener('click', function() {
-      const program = this.getAttribute('data-program');
-      const select = document.getElementById('program-select');
-      if (select && program) {
-        select.value = program;
-        select.dispatchEvent(new Event('change'));
-        // Smooth scroll to the form top
-        const formWrap = document.getElementById('form-simple');
-        if (formWrap) {
-          const top = formWrap.getBoundingClientRect().top + window.pageYOffset - 12;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      }
-    });
-  });
 
   // Handle back to selection buttons
   backButtons.forEach(button => {
