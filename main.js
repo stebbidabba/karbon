@@ -73,6 +73,78 @@
 
 // FAQ Accordion functionality
 window.addEventListener('DOMContentLoaded', function() {
+  // ===== Zapier webhook integration for forms =====
+  const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24820964/u968d0g/';
+
+  function serializeForm(form) {
+    const data = {};
+    const formData = new FormData(form);
+    formData.forEach((value, key) => {
+      if (data[key] !== undefined) {
+        if (!Array.isArray(data[key])) data[key] = [data[key]];
+        data[key].push(value);
+      } else {
+        data[key] = value;
+      }
+    });
+    return data;
+  }
+
+  async function postToZapier(payload) {
+    const response = await fetch(ZAPIER_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json().catch(() => ({}));
+  }
+
+  function handleSubmit(form, meta) {
+    if (!form) return;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton ? submitButton.textContent : '';
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Senda...';
+      }
+
+      const data = serializeForm(form);
+      const payload = {
+        source: 'karbon.is',
+        page: window.location.pathname,
+        submittedAt: new Date().toISOString(),
+        formMeta: meta,
+        data
+      };
+
+      try {
+        await postToZapier(payload);
+        form.innerHTML = '<div class="form-success">Takk! Við höfum móttekið innsendinguna þína. Við höfum samband fljótlega.</div>';
+      } catch (err) {
+        alert('Ekki tókst að senda. Reyndu aftur á eftir.');
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
+      }
+    });
+  }
+
+  // Simple form (Fjarþjálfun / Næringarráðgjöf)
+  const simpleFormWrap = document.getElementById('form-simple');
+  const simpleFormEl = simpleFormWrap ? simpleFormWrap.querySelector('form.form-card') : null;
+  handleSubmit(simpleFormEl, { id: 'simple-signup', name: 'Einföld skráning' });
+
+  // Inquiry form (Performance / Fyrirtækjanámskeið / Premium)
+  const inquiryFormWrap = document.getElementById('form-inquiry');
+  const inquiryFormEl = inquiryFormWrap ? inquiryFormWrap.querySelector('form.form-card') : null;
+  handleSubmit(inquiryFormEl, { id: 'inquiry', name: 'Fyrirspurn' });
+  // ===== End Zapier webhook integration =====
+});
   const faqItems = document.querySelectorAll('.faq-item');
   
   faqItems.forEach(item => {
