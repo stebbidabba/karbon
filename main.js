@@ -71,7 +71,7 @@
   });
 });
 
-// FAQ Accordion functionality
+// FAQ Accordion functionality + Zapier webhook integration
 window.addEventListener('DOMContentLoaded', function() {
   // ===== Zapier webhook integration for forms =====
   const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24820964/u968d0g/';
@@ -144,23 +144,22 @@ window.addEventListener('DOMContentLoaded', function() {
   const inquiryFormEl = inquiryFormWrap ? inquiryFormWrap.querySelector('form.form-card') : null;
   handleSubmit(inquiryFormEl, { id: 'inquiry', name: 'Fyrirspurn' });
   // ===== End Zapier webhook integration =====
-});
+
+  // ===== FAQ Accordion =====
   const faqItems = document.querySelectorAll('.faq-item');
-  
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    
+    if (!question) return;
     question.addEventListener('click', function() {
       const isActive = item.classList.contains('active');
-      
       // Close all other FAQ items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
-          otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          const otherQ = otherItem.querySelector('.faq-question');
+          if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
         }
       });
-      
       // Toggle current item
       if (isActive) {
         item.classList.remove('active');
@@ -170,7 +169,6 @@ window.addEventListener('DOMContentLoaded', function() {
         question.setAttribute('aria-expanded', 'true');
       }
     });
-    
     // Keyboard navigation
     question.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -179,6 +177,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  // ===== End FAQ Accordion =====
 });
 
 // Program Selection and Form Switching
