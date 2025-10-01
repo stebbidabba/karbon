@@ -91,13 +91,15 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   async function postToZapier(payload) {
-    const response = await fetch(ZAPIER_WEBHOOK_URL, {
+    // Use no-cors to bypass browser CORS restrictions. We cannot read the response,
+    // but Zapier will still receive the payload.
+    await fetch(ZAPIER_WEBHOOK_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    if (!response.ok) throw new Error('Network response was not ok');
-    return response.json().catch(() => ({}));
+    return {};
   }
 
   function handleSubmit(form, meta) {
