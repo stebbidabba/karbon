@@ -236,9 +236,6 @@ window.addEventListener('DOMContentLoaded', function() {
             case 'fjarþjálfun':
               title = 'Fjarþjálfun - Skráning';
               break;
-            case 'næringarráðgjöf':
-              title = 'Næringarráðgjöf - Skráning';
-              break;
           }
           simpleFormTitle.textContent = title;
           simpleForm.style.display = 'block';
@@ -382,6 +379,61 @@ window.addEventListener('DOMContentLoaded', function() {
       hamburgerBtn.focus();
     }
   }
+});
+
+// Pricing Card CTA Functionality
+window.addEventListener('DOMContentLoaded', function() {
+  const pricingCtas = document.querySelectorAll('.pricing-cta[data-program]');
+  
+  pricingCtas.forEach(cta => {
+    cta.addEventListener('click', function(e) {
+      e.preventDefault();
+      const program = this.getAttribute('data-program');
+      
+      // Scroll to signup section
+      const signupSection = document.getElementById('skraning');
+      if (signupSection) {
+        signupSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // After scrolling, show appropriate form
+        setTimeout(() => {
+          if (program === 'fyrirtækjanámskeið') {
+            // Show inquiry form for company training
+            document.getElementById('form-inquiry').style.display = 'block';
+            document.getElementById('form-simple').style.display = 'none';
+            
+            // Pre-select the program
+            const programSelect = document.getElementById('program-inquiry');
+            if (programSelect) {
+              programSelect.value = 'Fyrirtækjanámskeið';
+            }
+          } else {
+            // Show regular signup form for other programs
+            document.getElementById('form-simple').style.display = 'block';
+            document.getElementById('form-inquiry').style.display = 'none';
+            
+            // Pre-select the program
+            const programSelect = document.getElementById('program-select');
+            if (programSelect) {
+              let programValue = '';
+              switch(program) {
+                case 'fjarþjálfun':
+                  programValue = 'Æfingar með endurgjöf';
+                  break;
+                case 'karbon-performance':
+                  programValue = 'Karbon Performance';
+                  break;
+                case 'karbon-premium':
+                  programValue = 'Karbon Premium';
+                  break;
+              }
+              programSelect.value = programValue;
+            }
+          }
+        }, 500);
+      }
+    });
+  });
 });
 
 })();

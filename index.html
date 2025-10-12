@@ -14,7 +14,7 @@
   <body>
     <main id="home" aria-label="Aðalefni" class="hero" role="main">
       <a href="#home" class="logo-link">
-        <img src="./assets/images/logo.jpg" alt="Karbon Ísland merki" class="logo" width="200" height="200" />
+        <img src="./assets/images/logo.png" alt="Karbon Ísland merki" class="logo" width="200" height="200" />
       </a>
 
       <nav class="side-nav" aria-label="Aðal leiðsögn">
@@ -37,8 +37,9 @@
       <!-- moved to end of body -->
       
       <div class="hero__stacked" aria-label="Kynning">
-        <div class="badge">Fjarþjálfun og Næringarráðgjöf</div>
+        <div class="badge">Fjarþjálfun</div>
         <div class="hero__title">Karbon Ísland</div>
+        <a href="#skraning" class="hero-cta-button">Skrá sig</a>
       </div>
 
       <a class="skip-link" href="#thjonusta">Fara beint í efni</a>
@@ -91,13 +92,8 @@
               </div>
               
               <div class="service-item">
-                <h4>Næringarráðgjöf:</h4>
-                <p>Við hjálpum þér að finna mataræði sem passar þér fullkomlega. Einfalt mataræði sem styður vöðvauppbyggingu og gefur þér jafna orku allan daginn.</p>
-              </div>
-              
-              <div class="service-item">
                 <h4>Karbon Performance:</h4>
-                <p>Heildarlausn sem inniheldur fjarþjálfun, næringarráðgjöf, líkamlegar mælingar og fæðubótarefni.</p>
+                <p>Heildarlausn sem inniheldur fjarþjálfun, líkamlegar mælingar og fæðubótarefni.</p>
               </div>
             </div>
             
@@ -109,18 +105,6 @@
                   </svg>
                 </div>
                 <h4>Fjarþjálfun</h4>
-              </div>
-              
-              <div class="benefit-card">
-                <div class="benefit-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22c6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12S0 3.373 0 10c0 6.627 5.373 12 12 12z"/>
-                    <path d="M8 10c0-2.209 1.791-4 4-4s4 1.791 4 4"/>
-                    <path d="M12 6V2"/>
-                    <path d="M10 2h4"/>
-                  </svg>
-                </div>
-                <h4>Næringarráðgjöf</h4>
               </div>
               
               <div class="benefit-card">
@@ -191,31 +175,116 @@
       <div class="container">
         <h2>Þjónusta</h2>
         <p class="signup-subtitle">Kynntu þér þjónustuna okkar</p>
-        <div class="program-selector">
-          <a class="program-option" href="./fjarþjálfun.html" aria-label="Fjarþjálfun – nánar">
-            <h3>Fjarþjálfun</h3>
-            <p>Einstaklingsmiðuð þjálfun þar sem við komum þér í þitt besta stand með daglegri endurgjöf frá Eggert.</p>
-          </a>
-          <a class="program-option" href="./næringarráðgjöf.html" aria-label="Næringarráðgjöf – nánar">
-            <h3>Næringarráðgjöf</h3>
-            <p>Við hjálpum þér að finna mataræði sem passar þér fullkomlega með vikulegum check-in frá Ingimar.</p>
-          </a>
-          <a class="program-option" href="./æfingarprógram.html" aria-label="Æfingarprógram – nánar">
-            <h3>Æfingarprógram</h3>
-            <p>Daglega æfingar með skriflegum útskýringum og myndböndum af Eggert að sýna framkvæmd á hreyfingum.</p>
-          </a>
-          <a class="program-option" href="./karbon-performance.html" aria-label="Karbon Performance – nánar">
-            <h3>Karbon Performance</h3>
-            <p>Allt sem þú þarft til að ná hámarks árangri. Kynntu þér nánar hvað er innifalið.</p>
-          </a>
-          <a class="program-option" href="./karbon-premium.html" aria-label="Karbon Premium – nánar">
-            <h3>Karbon Premium</h3>
-            <p>Allt sem þú þarft fyrir heilsuna ef þú vilt ekki láta neitt fara fram hjá þér. Lestu meira.</p>
-          </a>
-          <a class="program-option" href="./fyrirtaeki.html" aria-label="Fyrirtækjanámskeið – nánar">
-            <h3>Fyrirtækjanámskeið</h3>
-            <p>Heilsuefling starfsfólks með fræðslu og skemmtilegri áskorun á vinnustaðnum.</p>
-          </a>
+        
+        <!-- Pricing Cards -->
+        <div class="pricing-grid">
+          <!-- Æfingar með endurgjöf -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-badge pricing-badge--teal">VINSÆLAST</div>
+            </div>
+            <div class="pricing-content">
+              <h3 class="pricing-title">Æfingar með endurgjöf</h3>
+              <p class="pricing-description">Einstaklingsmiðuð þjálfun með daglegri endurgjöf</p>
+              
+              <div class="pricing-price">
+                <span class="price-amount">24.990 kr.</span>
+              </div>
+              <div class="price-period">Á mán. per einstakling</div>
+              
+              <div class="pricing-features">
+                <div class="feature-item">
+                  <span class="feature-icon">💪</span>
+                  <span>Dagleg endurgjöf frá þjálfara</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">📱</span>
+                  <span>Notendavænt app</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">🎯</span>
+                  <span>Einstaklingsmiðað plan</span>
+                </div>
+              </div>
+              
+              <div class="pricing-buttons">
+                <a href="./fjarþjálfun.html" class="pricing-cta pricing-cta--secondary">SJÁ MEIRA</a>
+                <button class="pricing-cta" data-program="fjarþjálfun">SKRÁÐU ÞIG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-badge pricing-badge--blue">PERFORMANCE</div>
+            </div>
+            <div class="pricing-content">
+              <h3 class="pricing-title">Performance</h3>
+              <p class="pricing-description">Allt sem þú þarft til að ná hámarks árangri</p>
+              
+              <div class="pricing-price">
+                <span class="price-amount">179.990 kr.</span>
+              </div>
+              <div class="price-period">Fyrir 4 mánuði</div>
+              
+              <div class="pricing-features">
+                <div class="feature-item">
+                  <span class="feature-icon">💪</span>
+                  <span>Fjarþjálfun</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">📏</span>
+                  <span>Líkamlegar mælingar</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">💊</span>
+                  <span>Fæðubótarefni</span>
+                </div>
+              </div>
+              
+              <div class="pricing-buttons">
+                <a href="./karbon-performance.html" class="pricing-cta pricing-cta--secondary">SJÁ MEIRA</a>
+                <button class="pricing-cta" data-program="karbon-performance">SKRÁÐU ÞIG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Premium -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-badge pricing-badge--gold">PREMIUM</div>
+            </div>
+            <div class="pricing-content">
+              <h3 class="pricing-title">Premium</h3>
+              <p class="pricing-description">Allt sem þú þarft fyrir heilsuna</p>
+              
+              <div class="pricing-price">
+                <span class="price-amount">1.799.990 kr.</span>
+              </div>
+              <div class="price-period">Fyrir 12 mánuði</div>
+              
+              <div class="pricing-features">
+                <div class="feature-item">
+                  <span class="feature-icon">🧬</span>
+                  <span>Genarannsóknir</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">💉</span>
+                  <span>Blóðprufur</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">⌚</span>
+                  <span>Whoop áskrift</span>
+                </div>
+              </div>
+              
+              <div class="pricing-buttons">
+                <a href="./karbon-premium.html" class="pricing-cta pricing-cta--secondary">SJÁ MEIRA</a>
+                <button class="pricing-cta" data-program="karbon-premium">SKRÁÐU ÞIG</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -340,7 +409,7 @@
             <div class="communication-content">
               <h3>Til að hámarka árangur</h3>
               <p>Til þess að hámarka árangur og ánægju okkar kúnna þá leggjum við áherslu á góð samskipti.</p>
-              <p>Getið alltaf haft samskipti við Eggert og Ingimar ef þið hafið fyrirspurn eða pælingar sem tengjast æfingum, næringu eða öðrum heilsutengdum þáttum.</p>
+              <p>Getið alltaf haft samskipti við þjálfarana okkar ef þið hafið fyrirspurn eða pælingar sem tengjast æfingum, næringu eða öðrum heilsutengdum þáttum.</p>
               <p>Við viljum að þú sért óhræddur að senda okkur spurningar eða pælingar og við svörum fljótt og heiðarlega.</p>
             </div>
           </div>
@@ -414,7 +483,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Inn í forritinu koma æfingarnar inn daglega með skriflegum útskýringum og myndbandi af Eggert að sýna framkvæmd á hreyfingum og tæknipunkta.</p>
+              <p>Inn í forritinu koma æfingarnar inn daglega með skriflegum útskýringum og myndbandi að sýna framkvæmd á hreyfingum og tæknipunkta.</p>
             </div>
           </div>
 
@@ -464,9 +533,9 @@
               <label for="program-select">Þjálfun</label>
               <select id="program-select" name="program" required>
                 <option value="">Veldu þjálfun</option>
-                <option value="Fjarþjálfun">Fjarþjálfun</option>
-                <option value="Næringarráðgjöf">Næringarráðgjöf</option>
-                <option value="Æfingarprógram">Æfingarprógram</option>
+                <option value="Æfingar með endurgjöf">Æfingar með endurgjöf</option>
+                <option value="Karbon Performance">Karbon Performance</option>
+                <option value="Karbon Premium">Karbon Premium</option>
               </select>
             </div>
             
@@ -510,10 +579,7 @@
             <div class="form-control">
               <label for="program-inquiry">Þjónusta</label>
               <select id="program-inquiry" name="program" required>
-                <option value="">Veldu þjónustu</option>
-                <option value="Karbon Performance">Karbon Performance</option>
-                <option value="Karbon Premium">Karbon Premium</option>
-                <option value="Fyrirtækjanámskeið">Fyrirtækjanámskeið</option>
+                <option value="Fyrirtækjanámskeið" selected>Fyrirtækjanámskeið</option>
               </select>
             </div>
             

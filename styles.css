@@ -152,6 +152,40 @@ body {
   text-shadow: 0 4px 24px rgba(0,0,0,0.45);
 }
 
+/* Hero CTA Button */
+.hero-cta-button {
+  display: inline-block;
+  margin-top: clamp(16px, 3vw, 24px);
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 5vw, 40px);
+  background: var(--brand-green);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(16px, 3vw, 20px);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(89, 162, 81, 0.4);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.hero-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(89, 162, 81, 0.6);
+  background: #6bc46d;
+}
+
+.hero-cta-button:focus {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.hero-cta-button:active {
+  transform: translateY(-1px);
+}
+
 /* Company page specific tweaks */
 .hero--company .hero__stacked { 
   left: clamp(12px, 3vw, 24px);
@@ -179,6 +213,211 @@ body {
   color: var(--white);
   font-weight: 700;
   font-size: clamp(18px, 3.3vw, 28px);
+}
+
+/* Pricing Cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.pricing-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-header {
+  padding: 20px 24px 0;
+}
+
+.pricing-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-badge--teal {
+  background: #20B2AA;
+  color: var(--white);
+}
+
+.pricing-badge--green {
+  background: var(--brand-green);
+  color: var(--black);
+}
+
+.pricing-badge--blue {
+  background: #3498DB;
+  color: var(--white);
+}
+
+.pricing-badge--gold {
+  background: #F39C12;
+  color: var(--white);
+}
+
+.pricing-badge--purple {
+  background: #9B59B6;
+  color: var(--white);
+}
+
+.pricing-content {
+  padding: 24px;
+  color: var(--black);
+}
+
+.pricing-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--black);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.pricing-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+.pricing-price {
+  margin-bottom: 8px;
+}
+
+.price-amount {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--black);
+  line-height: 1;
+}
+
+.price-disclaimer {
+  font-size: 12px;
+  color: #20B2AA;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.price-period {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.pricing-features {
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.feature-icon {
+  margin-right: 12px;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.pricing-cta {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--brand-green);
+  color: var(--black);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricing-cta:hover {
+  background: #6bc46d;
+  transform: translateY(-2px);
+}
+
+.pricing-cta--inquiry {
+  background: #666;
+  color: var(--white);
+}
+
+.pricing-cta--inquiry:hover {
+  background: #555;
+}
+
+.pricing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pricing-cta--secondary {
+  background: #666;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.pricing-cta--secondary:hover {
+  background: #555;
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .pricing-card {
+    margin: 0 16px;
+  }
+  
+  .pricing-content {
+    padding: 20px;
+  }
+  
+  .pricing-title {
+    font-size: 20px;
+  }
+  
+  .price-amount {
+    font-size: 28px;
+  }
 }
 
 /* Sections */
@@ -362,12 +601,28 @@ body {
   gap: 24px;
 }
 
+/* Special layout for 3-card grids */
+.benefits-grid:has(.benefit-card:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1200px) {
   .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .benefits-grid:has(.benefit-card:nth-child(3):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+  .benefits-grid:has(.benefit-card:nth-child(3):last-child) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .benefit-card {
