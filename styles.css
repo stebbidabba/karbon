@@ -1324,15 +1324,17 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   color: var(--white);
+  font-size: 16px;
 }
 .form-control input, .form-control textarea {
   width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.14);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
   background: #111415;
   color: var(--white);
   font-family: 'Inter', sans-serif;
+  font-size: 16px;
 }
 .form-control input::placeholder, .form-control textarea::placeholder { color: rgba(255,255,255,0.6); }
 .form-control input:focus, .form-control textarea:focus {
@@ -1432,11 +1434,12 @@ body {
   justify-content: center;
   gap: 8px;
   border-radius: 999px;
-  padding: 12px 18px;
+  padding: 14px 22px;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  font-size: 16px;
 }
 .btn--primary {
   background: var(--brand-green);
@@ -1731,17 +1734,18 @@ body {
 }
 
 .signup-form .form-card {
-  max-width: 600px;
+  max-width: 720px;
   margin: 0 auto;
+  padding: 28px;
 }
 
 .signup-form .form-card h3 { 
-  margin: 0 0 24px 0; 
+  margin: 0 0 28px 0; 
   text-align: center; 
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--white);
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .btn--secondary {
